@@ -4,8 +4,15 @@
 // ===================================================================================
 
 const defaultEleves = [
-  // Données initiales issues du fichier Mdp portail.pdf
-  { prenom: 'ADAM', nom: 'AJENGUI', groupe: 1 }, { prenom: 'Arna', nom: 'Ali', groupe: 1 }, { prenom: 'Edith', nom: 'BORIN', groupe: 1 }, { prenom: 'Ibrahima', nom: 'Camara', groupe: 1 }, { prenom: 'flora', nom: 'chachuat', groupe: 1 }, { prenom: 'Bianca', nom: 'Ciulin', groupe: 1 }, { prenom: 'Aurelia', nom: 'Fontaine', groupe: 1 }, { prenom: 'WALID', nom: 'GUEMIMI AZZAB', groupe: 1 }, { prenom: 'Luis', nom: 'JIMENEZ', groupe: 1 }, { prenom: 'Debora', nom: 'Malunda', groupe: 1 }, { prenom: 'Téilo', nom: 'Mateo', groupe: 1 }, { prenom: 'Jeanael', nom: '', groupe: 1 }, { prenom: 'Peterson', nom: '', groupe: 2 }, { prenom: 'Kaina', nom: 'BEJI', groupe: 2 }, { prenom: 'Ortence', nom: 'DAOUDA', groupe: 2 }, { prenom: 'Ayoub', nom: 'MHAMDI', groupe: 2 }, { prenom: 'Baba', nom: 'Ndiaye', groupe: 2 }, { prenom: 'Nawel', nom: 'Qader', groupe: 2 }, { prenom: 'noémy', nom: 'rigouste', groupe: 2 }, { prenom: 'Emma', nom: 'ROCHE', groupe: 2 }, { prenom: 'Bena', nom: 'SAHIN', groupe: 2 }, { prenom: 'DIADIE', nom: 'WADE', groupe: 2 }, { prenom: 'ILYESS', nom: 'YAHOUI', groupe: 2 }, { prenom: 'Andréas', nom: 'ZINGILA', groupe: 2 }, { prenom: 'Sheryne', nom: 'Belaagradi', groupe: 3 }, { prenom: 'Kaiss', nom: 'Benziane', groupe: 3 }, { prenom: 'Dame', nom: 'FallSeye', groupe: 3 }, { prenom: 'lenny', nom: 'gimenez', groupe: 3 }, { prenom: 'nema', nom: 'khoya', groupe: 3 }, { prenom: 'llana', nom: 'Labaur', groupe: 3 }, { prenom: 'Jordan', nom: 'LAFFONT', groupe: 3 }, { prenom: 'Teiki', nom: 'Mabille', groupe: 3 }, { prenom: 'KENZA', nom: 'MAHBOUB', groupe: 3 }, { prenom: 'Yoni', nom: 'Moutonnet', groupe: 3 }, { prenom: 'Ethan', nom: 'Ousseni', groupe: 3 }, { prenom: 'mina', nom: 'sahin', groupe: 3 }, { prenom: 'Heather', nom: 'Talon', groupe: 3 }, { prenom: 'Tamirlan', nom: 'Tazabaev', groupe: 3 }, { prenom: 'Sami', nom: 'Tekin', groupe: 3 }
+  // Nouveaux élèves avec information de classe et de groupe
+  { prenom: 'Lina', nom: 'Dupont', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Marc', nom: 'Leroy', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Sofia', nom: 'Moreau', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Hugo', nom: 'Bernard', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Emma', nom: 'Petit', classe: '1AA', groupe: 1 },
+  { prenom: 'Noah', nom: 'Rousseau', classe: '1AA', groupe: 1 },
+  { prenom: 'Chloé', nom: 'Fournier', classe: '1AA', groupe: 2 },
+  { prenom: 'Lucas', nom: 'Girard', classe: '1AA', groupe: 2 }
 ];
 
 const defaultCriteres = [
@@ -60,11 +67,21 @@ function closeAllModals() {
 function openGroupManagement() {
   const editor = document.getElementById('group-editor');
   editor.innerHTML = '';
-  eleves.forEach((eleve, index) => {
-    const row = document.createElement('div');
-    row.className = 'student-row';
-    row.innerHTML = `<span class="student-name">${eleve.prenom} ${eleve.nom}</span><label>Groupe :</label><input type="number" value="${eleve.groupe}" data-index="${index}" style="width: 60px;">`;
-    editor.appendChild(row);
+  const classes = eleves.reduce((acc, e, i) => {
+    (acc[e.classe] = acc[e.classe] || []).push({ ...e, index: i });
+    return acc;
+  }, {});
+  Object.keys(classes).sort().forEach(classe => {
+    const section = document.createElement('div');
+    section.className = 'class-section';
+    section.innerHTML = `<h3>Classe ${classe}</h3>`;
+    classes[classe].forEach(e => {
+      const row = document.createElement('div');
+      row.className = 'student-row';
+      row.innerHTML = `<span class="student-name">${e.prenom} ${e.nom}</span><label>Groupe :</label><input type="number" value="${e.groupe}" data-index="${e.index}" style="width: 60px;">`;
+      section.appendChild(row);
+    });
+    editor.appendChild(section);
   });
   groupPanel.style.display = 'block';
   criteriaPanel.style.display = 'none';
@@ -112,22 +129,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // Affichage de la date
   document.getElementById('date').textContent = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  // Génération du sélecteur d'élèves
+  // Génération du sélecteur d'élèves par classe puis groupe
   const studentSelector = document.getElementById('student-selector');
-  studentSelector.innerHTML = '<label>Élèves</label>';
-  const groupedEleves = eleves.reduce((acc, e, i) => { (acc[e.groupe] = acc[e.groupe] || []).push({ ...e, index: i }); return acc; }, {});
-  Object.keys(groupedEleves).sort((a,b) => a-b).forEach(groupe => {
-    const groupContainer = document.createElement('div');
-    groupContainer.className = 'student-group';
-    groupContainer.innerHTML = `<h4>Groupe ${groupe}</h4>`;
-    groupedEleves[groupe].forEach(e => {
-      const checkboxWrapper = document.createElement('div');
-      checkboxWrapper.className = 'student-checkbox';
-      checkboxWrapper.innerHTML = `<label><input type="checkbox" name="eleve" value="${e.index}"> ${e.prenom} ${e.nom}</label>`;
-      groupContainer.appendChild(checkboxWrapper);
+  studentSelector.innerHTML = '<label>Classe</label>';
+
+  const classSelect = document.createElement('select');
+  classSelect.id = 'class-select';
+  const classes = Array.from(new Set(eleves.map(e => e.classe))).sort();
+  classSelect.innerHTML = '<option value="">— Sélectionnez —</option>' + classes.map(c => `<option value="${c}">${c}</option>`).join('');
+  studentSelector.appendChild(classSelect);
+
+  const groupsContainer = document.createElement('div');
+  groupsContainer.id = 'class-groups';
+  studentSelector.appendChild(groupsContainer);
+
+  function renderGroups(classe) {
+    groupsContainer.innerHTML = '';
+    if (!classe) return;
+    const grouped = eleves
+      .map((e, i) => ({ ...e, index: i }))
+      .filter(e => e.classe === classe)
+      .reduce((acc, e) => { (acc[e.groupe] = acc[e.groupe] || []).push(e); return acc; }, {});
+    Object.keys(grouped).sort((a,b) => a-b).forEach(groupe => {
+      const groupContainer = document.createElement('div');
+      groupContainer.className = 'student-group';
+      groupContainer.innerHTML = `<h4>Groupe ${groupe}</h4>`;
+      grouped[groupe].forEach(e => {
+        const checkboxWrapper = document.createElement('div');
+        checkboxWrapper.className = 'student-checkbox';
+        checkboxWrapper.innerHTML = `<label><input type="checkbox" name="eleve" value="${e.index}"> ${e.prenom} ${e.nom}</label>`;
+        groupContainer.appendChild(checkboxWrapper);
+      });
+      groupsContainer.appendChild(groupContainer);
     });
-    studentSelector.appendChild(groupContainer);
-  });
+  }
+
+  classSelect.addEventListener('change', e => renderGroups(e.target.value));
+  if (classes.length > 0) {
+    classSelect.value = classes[0];
+    renderGroups(classes[0]);
+  }
 
   // Génération des cartes d’appréciation
   const appContainer = document.getElementById('appreciations');
