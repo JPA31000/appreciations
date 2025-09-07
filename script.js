@@ -4,15 +4,48 @@
 // ===================================================================================
 
 const defaultEleves = [
-  // Nouveaux élèves avec information de classe et de groupe
-  { prenom: 'Lina', nom: 'Dupont', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Marc', nom: 'Leroy', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Sofia', nom: 'Moreau', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Hugo', nom: 'Bernard', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Emma', nom: 'Petit', classe: '1AA', groupe: 1 },
-  { prenom: 'Noah', nom: 'Rousseau', classe: '1AA', groupe: 1 },
-  { prenom: 'Chloé', nom: 'Fournier', classe: '1AA', groupe: 2 },
-  { prenom: 'Lucas', nom: 'Girard', classe: '1AA', groupe: 2 }
+  // 2EMNB1 groupe 1
+  { prenom: 'Khadija', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Nour', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Mélissa', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Fatima', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Glory', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Rayane Bamba', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Chloé', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Orlane', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Ayman', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Killyann', nom: '', classe: '2EMNB1', groupe: 1 },
+  { prenom: 'Enzo', nom: '', classe: '2EMNB1', groupe: 1 },
+  // 2EMNB1 groupe 2
+  { prenom: 'Maria-Teodora', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Giorgi', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Angelina', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Karamba', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Fernanda', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Kelly', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Samia', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Pharel', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Adam', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Noa', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Romayssa', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Ranim', nom: '', classe: '2EMNB1', groupe: 2 },
+  { prenom: 'Danny', nom: '', classe: '2EMNB1', groupe: 2 },
+  // 1AA groupe 1
+  { prenom: 'Adam', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Edith', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Flora', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Ortence', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Dame', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Luis', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Lizi', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Débora', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Baba', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Noemy', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Emma', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Heather', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Tamirlan', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Diadie', nom: '', classe: '1AA', groupe: 1 },
+  { prenom: 'Andréas', nom: '', classe: '1AA', groupe: 1 }
 ];
 
 const defaultCriteres = [
