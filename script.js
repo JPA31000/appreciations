@@ -1,64 +1,4 @@
 // ===================================================================================
-// DONNÉES PAR DÉFAUT
-// Utilisées la 1ère fois ou si les données personnalisées sont absentes/effacées.
-// ===================================================================================
-
-const defaultEleves = [
-  // 2EMNB1 groupe 1
-  { prenom: 'Khadija', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Nour', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Mélissa', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Fatima', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Glory', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Rayane Bamba', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Chloé', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Orlane', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Ayman', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Killyann', nom: '', classe: '2EMNB1', groupe: 1 },
-  { prenom: 'Enzo', nom: '', classe: '2EMNB1', groupe: 1 },
-  // 2EMNB1 groupe 2
-  { prenom: 'Maria-Teodora', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Giorgi', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Angelina', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Karamba', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Fernanda', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Kelly', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Samia', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Pharel', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Adam', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Noa', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Romayssa', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Ranim', nom: '', classe: '2EMNB1', groupe: 2 },
-  { prenom: 'Danny', nom: '', classe: '2EMNB1', groupe: 2 },
-  // 1AA groupe 1
-  { prenom: 'Adam', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Edith', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Flora', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Ortence', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Dame', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Luis', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Lizi', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Débora', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Baba', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Noemy', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Emma', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Heather', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Tamirlan', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Diadie', nom: '', classe: '1AA', groupe: 1 },
-  { prenom: 'Andréas', nom: '', classe: '1AA', groupe: 1 }
-];
-
-const defaultCriteres = [
-  // Données initiales issues du fichier script.js
-  { code: 'implication', label: 'Implication et attitude en classe', icon: 'fa-user-check', suggestions: [ 'Se montre souvent désintéressé(e) lors des activités de groupe.', 'A du mal à suivre l’ensemble des consignes proposées.', 'Intervient rarement et reste en retrait lors des explications.', 'Montre peu de curiosité pour les sujets abordés.', 'Peut être distrait(e) par des éléments extérieurs au cours.', 'Fixe parfois des objectifs sans les formaliser.', 'Commence les tâches sans toujours écouter les consignes.', 'Participe ponctuellement sans régularité notable.', 'Montre une attention variable selon les séances.', 'Suit globalement les consignes, avec quelques oublis.', 'Est attentif(ve) mais hésite avant de solliciter l’enseignant.', 'Demande parfois des clarifications de manière irrégulière.', 'Intervient avec pertinence mais de façon sporadique.', 'Participe activement dans certains travaux pratiques.', 'Propose des idées de manière régulière en groupe.', 'Prend des initiatives pour approfondir certaines notions.', 'Demande des retours pour améliorer son attitude en classe.', 'Affiche une attitude positive et motivée en continu.', 'Fait preuve d’initiative et engage des échanges constructifs.', 'Donne l’exemple par une implication soutenue et constante.' ], improvements: [ 'Essayez de vous impliquer davantage en posant une question par séance.', 'Poursuivez vos efforts et cherchez à participer plus régulièrement.', 'Continuez sur cette lancée et partagez vos idées avec confiance.', 'Maintenez cette attitude proactive et inspirez vos camarades.' ] },
-  { code: 'technique', label: 'Compétences techniques / professionnelles', icon: 'fa-wrench', suggestions: [ 'Rencontre des difficultés à utiliser les outils de base.', 'Manque de précision dans l’exécution des tâches techniques.', 'A besoin d’un accompagnement fréquent pour réaliser les opérations.', 'Éprouve des hésitations dans l’application des procédures.', 'Respecte partiellement les normes de sécurité élémentaires.', 'Sait reproduire les gestes appris sans autonomie complète.', 'Montre une compréhension basique des outils professionnels.', 'Accomplit les tâches techniques avec guidance régulière.', 'Commence à respecter les règles de sécurité de manière sporadique.', 'Maîtrise les opérations élémentaires en situation guidée.', 'Prend en compte les consignes de sécurité avec régularité.', 'Montre une rigueur correcte dans le maniement des équipements.', 'Accomplit les travaux techniques de façon fiable et répétée.', 'Démontre une bonne compréhension des protocoles professionnels.', 'Exécute les tâches techniques avec précision et méthode.', 'Utilise efficacement les outils en respectant les normes.', 'Fait preuve d’autonomie et de soin dans le travail technique.', 'Anticipe les difficultés et ajuste sa méthode de travail.', 'Maîtrise les gestes professionnels complexes de façon constante.', 'Donne l’exemple en matière de qualité et de sécurité.' ], improvements: [ 'Pratiquez les gestes de base régulièrement pour gagner en confiance.', 'Consolidez vos acquis en vous exerçant sur des cas simples.', 'Défiez-vous sur des tâches plus complexes pour gagner en autonomie.', 'Continuez d’affiner vos compétences et partagez votre savoir-faire.' ] },
-  { code: 'comprehension', label: 'Compréhension et acquisition des savoirs', icon: 'fa-brain', suggestions: [ 'N’arrive pas à restituer les notions de base en contexte.', 'Comprend des éléments isolés sans lien global.', 'Montre des difficultés à verbaliser sa compréhension.', 'A besoin d’exemples répétés pour assimiler pleinement.', 'Assimile partiellement certaines notions fondamentales.', 'Doit revoir régulièrement les notions traitées.', 'Comprend l’essentiel mais oublie parfois des détails clés.', 'Reformule les notions simples avec aide ponctuelle.', 'Établit un lien limité entre théorie et pratique.', 'Applique les savoirs de base en exercices guidés.', 'Intègre progressivement les concepts de manière autonome.', 'Pose des questions pertinentes pour clarifier sa compréhension.', 'Reformule les notions avec précision et en contexte adapté.', 'Applique de façon fiable les savoirs aux cas pratiques.', 'Fait preuve d’analyse et relie les notions entre elles.', 'Élargit sa compréhension à de nouvelles situations techniques.', 'Démontre une compréhension approfondie des principes clés.', 'Transfère ses connaissances à des cas pratiques variés.', 'Synthétise clairement les savoirs et maîtrise leur application.', 'Excelle dans l’acquisition et l’exploitation des savoirs.' ], improvements: [ 'Relisez vos notes après chaque cours pour renforcer votre compréhension.', 'Posez des questions dès que vous avez un doute pour clarifier les notions.', 'Enrichissez votre réflexion en reliant théorie et pratique.', 'Expliquez les concepts à un camarade pour consolider votre maîtrise.' ] },
-  { code: 'travail', label: 'Travail personnel et régularité', icon: 'fa-clock', suggestions: [ 'Rend fréquemment les travaux hors délai sans explication.', 'Travaille de façon irrégulière selon la motivation du jour.', 'A du mal à organiser son planning personnel.', 'N’anticipe pas les étapes et termine souvent à la dernière minute.', 'Manque de suivi dans l’application des consignes de travail.', 'Répond aux exigences mais sans constance marquée.', 'Fournit un travail acceptable uniquement dans l’urgence.', 'Développe une routine de travail avec quelques oublis.', 'Gère son temps de façon moyenne, avec quelques retards.', 'Respecte globalement les échéances, parfois juste à temps.', 'Planifie les tâches simples sans demander d’aide.', 'Réalise un travail soigné lorsqu’il y consacre du temps.', 'Fournit régulièrement un travail complet et bien présenté.', 'Anticipe les demandes et propose des compléments d’analyse.', 'Organise efficacement son travail avec peu de rappels extérieurs.', 'Démontre une bonne autonomie dans la réalisation des tâches.', 'Adapte son rythme de travail en fonction des besoins du projet.', 'Travail approfondi et rendu systématiquement en avance.', 'Donne l’exemple par sa rigueur et sa régularité constantes.' ], improvements: [ 'Organisez une liste de tâches à accomplir chaque jour.', 'Fixez-vous des échéances claires pour chaque travail.', 'Planifiez vos sessions de travail en avance pour plus de régularité.', 'Maintenez cette rigueur et anticipez toujours vos besoins.' ] },
-  { code: 'savoir_etre', label: 'Savoir-être professionnel', icon: 'fa-user-tie', suggestions: [ 'Manque ponctuel aux règles de base (ponctualité, tenue).', 'Comportement variable selon les situations.', 'A besoin de rappels pour respecter les consignes élémentaires.', 'Manque parfois de considération pour le matériel partagé.', 'Interagit de façon restreinte avec les camarades.', 'Globalement respectueux des règles, avec quelques oublis.', 'Attitude correcte mais sans initiative relationnelle.', 'Comportement coopératif dans certaines activités.', 'Civilité verbale présente mais plutôt discrète.', 'Sait écouter et respecter les avis des autres.', 'Participe de manière constructive aux échanges de groupe.', 'Communication claire et respectueuse la plupart du temps.', 'Gère les conflits simples avec calme et professionnalisme.', 'Respect constant du matériel et de l’environnement.', 'Propose spontanément son aide aux camarades en difficulté.', 'Attitude exemplaire de collaboration et de partage.', 'Crée un climat de confiance par son professionnalisme.', 'Donne l’exemple par sa ponctualité et son sérieux.' ], improvements: [ 'Rappelez-vous de respecter ponctualité et consignes à chaque séance.', 'Travaillez votre communication avec vos pairs pour un meilleur échange.', 'Proposez régulièrement votre aide pour renforcer votre esprit d’équipe.', 'Continuez d’incarner un savoir-être exemplaire pour vos camarades.' ] },
-  { code: 'progression', label: 'Progression', icon: 'fa-chart-line', suggestions: [ 'N’a pas montré d’évolution notable depuis le début du semestre.', 'Progrès limités, à consolider régulièrement les fondamentaux.', 'Progression irrégulière et sujette à encadrement permanent.', 'Avance lentement avec recul sur certaines notions.', 'Progrès perceptibles mais sans suivi clair.', 'Évolution modérée, à renforcer par un travail ciblé.', 'Montre une amélioration progressive sur quelques points.', 'Progrès constants dans les tâches guidées.', 'Avance régulièrement sur les exercices pratiques.', 'S’adapte progressivement en autonomie.', 'Amélioration sensible dans la compréhension des méthodes.', 'Acquiert de nouvelles compétences à un rythme satisfaisant.', 'Progression régulière avec initiatives ponctuelles.', 'Évolution notable sur plusieurs critères.', 'S’inscrit dans une dynamique positive de progression.', 'Démontre une constance dans le développement de ses acquis.', 'Excelle dans sa progression et ses résultats sont en nette amélioration.', 'Affine sans cesse ses compétences et perfectionne son savoir.', 'Donne l’exemple par sa progression continue et motivée.' ], improvements: [ 'Identifiez un point clé à améliorer chaque semaine.', 'Fixez-vous de petits objectifs pour mesurer votre progression.', 'Célébrez vos progrès et définissez un nouveau défi.', 'Continuez à vous challenger pour maintenir votre évolution.' ] }
-];
-
-// ===================================================================================
 // LOGIQUE DE GESTION DES DONNÉES (localStorage)
 // ===================================================================================
 
@@ -81,9 +21,9 @@ function saveData(key, data) {
   }
 }
 
-// Chargement des données au démarrage de l'application
-let eleves = loadData('mesEleves', defaultEleves);
-let criteres = loadData('mesCriteres', defaultCriteres);
+// Données de l'application (chargées après récupération des fichiers JSON)
+let eleves = [];
+let criteres = [];
 
 // ===================================================================================
 // FONCTIONS DE GESTION DES FENÊTRES MODALES
@@ -158,7 +98,15 @@ function saveCriteriaAndReload() {
 // LOGIQUE PRINCIPALE DE L'APPLICATION
 // ===================================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  const [defaultEleves, defaultCriteres] = await Promise.all([
+    fetch('data/eleves.json').then(res => res.json()),
+    fetch('data/criteres.json').then(res => res.json())
+  ]);
+
+  eleves = loadData('mesEleves', defaultEleves);
+  criteres = loadData('mesCriteres', defaultCriteres);
+
   // Affichage de la date
   document.getElementById('date').textContent = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 
