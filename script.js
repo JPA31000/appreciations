@@ -112,44 +112,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Génération du sélecteur d'élèves par classe puis groupe
   const studentSelector = document.getElementById('student-selector');
-  studentSelector.innerHTML = '<label>Classe</label>';
+  studentSelector.innerHTML = '<label>Classes et groupes</label>';
 
-  const classSelect = document.createElement('select');
-  classSelect.id = 'class-select';
-  const classes = Array.from(new Set(eleves.map(e => e.classe))).sort();
-  classSelect.innerHTML = '<option value="">— Sélectionnez —</option>' + classes.map(c => `<option value="${c}">${c}</option>`).join('');
-  studentSelector.appendChild(classSelect);
+  const classList = document.createElement('div');
+  classList.className = 'class-list';
+  studentSelector.appendChild(classList);
 
-  const groupsContainer = document.createElement('div');
-  groupsContainer.id = 'class-groups';
-  studentSelector.appendChild(groupsContainer);
+  const classes = eleves.reduce((acc, e, index) => {
+    const classGroups = acc[e.classe] || (acc[e.classe] = {});
+    (classGroups[e.groupe] = classGroups[e.groupe] || []).push({ ...e, index });
+    return acc;
+  }, {});
 
-  function renderGroups(classe) {
-    groupsContainer.innerHTML = '';
-    if (!classe) return;
-    const grouped = eleves
-      .map((e, i) => ({ ...e, index: i }))
-      .filter(e => e.classe === classe)
-      .reduce((acc, e) => { (acc[e.groupe] = acc[e.groupe] || []).push(e); return acc; }, {});
-    Object.keys(grouped).sort((a,b) => a-b).forEach(groupe => {
-      const groupContainer = document.createElement('div');
-      groupContainer.className = 'student-group';
-      groupContainer.innerHTML = `<h4>Groupe ${groupe}</h4>`;
-      grouped[groupe].forEach(e => {
+  Object.keys(classes).sort().forEach(classe => {
+    const classSection = document.createElement('details');
+    classSection.className = 'class-section';
+    const classSummary = document.createElement('summary');
+    classSummary.textContent = `Classe ${classe}`;
+    classSection.appendChild(classSummary);
+
+    Object.keys(classes[classe]).sort((a, b) => a - b).forEach(groupe => {
+      const groupSection = document.createElement('details');
+      groupSection.className = 'group-section';
+      const groupSummary = document.createElement('summary');
+      groupSummary.textContent = `Groupe ${groupe}`;
+      groupSection.appendChild(groupSummary);
+
+      classes[classe][groupe].forEach(e => {
         const checkboxWrapper = document.createElement('div');
         checkboxWrapper.className = 'student-checkbox';
         checkboxWrapper.innerHTML = `<label><input type="checkbox" name="eleve" value="${e.index}"> ${e.prenom} ${e.nom}</label>`;
-        groupContainer.appendChild(checkboxWrapper);
+        groupSection.appendChild(checkboxWrapper);
       });
-      groupsContainer.appendChild(groupContainer);
-    });
-  }
 
-  classSelect.addEventListener('change', e => renderGroups(e.target.value));
-  if (classes.length > 0) {
-    classSelect.value = classes[0];
-    renderGroups(classes[0]);
-  }
+      classSection.appendChild(groupSection);
+    });
+
+    classList.appendChild(classSection);
+  });
 
   // Génération des cartes d’appréciation
   const appContainer = document.getElementById('appreciations');

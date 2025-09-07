@@ -248,6 +248,27 @@ header p { color: #777; font-size: 0.95rem; }
   margin-bottom: 5px;
 }
 
+.class-section {
+  margin-bottom: 10px;
+}
+.group-section {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.class-section summary,
+.group-section summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+.class-section summary::-webkit-details-marker,
+.group-section summary::-webkit-details-marker {
+  display: none;
+}
+.group-section .student-checkbox {
+  margin-left: 20px;
+}
+
 #group-editor .student-row {
   display: flex;
   align-items: center;
