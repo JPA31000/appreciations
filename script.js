@@ -215,16 +215,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         improvementsHTML += '</ul>';
     }
 
-    selectedIndexes.forEach(index => {
+    const exportDate = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+    const aggregatedHTML = selectedIndexes.map((index, pageIndex) => {
       const eleve = eleves[index];
-      
-      // Correction 2: Ajouter l'en-tête personnalisé
-      const pdfContent = `
-        <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto;">
+      const pageBreakStyle = pageIndex < selectedIndexes.length - 1 ? 'page-break-after: always;' : '';
+
+      return `
+        <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; ${pageBreakStyle}">
           <header style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 15px;">
             <h1>Appréciations en enseignement professionnel</h1>
             <p style="font-style: italic; color: #555; margin-top: 5px; margin-bottom: 10px;">appréciation relative à l’enseignement professionnel « Étude et économie de la construction », bilan établi à l’issue de chaque période. »</p>
-            <p>${new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p>${exportDate}</p>
             <h2 style="margin-top: 20px;">Élève : ${eleve.prenom} ${eleve.nom}</h2>
           </header>
           <section style="margin-top: 30px;"><h3 style="margin-bottom: 10px;">Appréciations générales :</h3><div style="line-height:1.6;">${appreciationsHTML}</div></section>
@@ -234,9 +235,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div style="flex: 1;"><label style="font-weight: bold; display: block; margin-bottom: 50px;">Signature de l’enseignant</label></div>
           </footer>
         </div>`;
-        
-      const filename = `Appreciation_${eleve.prenom}_${eleve.nom}.pdf`.replace(/ /g, '_');
-      html2pdf().set({ margin: [0.5, 0.4, 0.5, 0.4], filename, jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' } }).from(pdfContent).save();
-    });
+    }).join('');
+
+    const collectiveFilename = `Appreciations_Collectives_${selectedIndexes.length}_eleves.pdf`.replace(/ /g, '_');
+    html2pdf()
+      .set({ margin: [0.5, 0.4, 0.5, 0.4], filename: collectiveFilename, jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' } })
+      .from(`<div>${aggregatedHTML}</div>`)
+      .save();
   });
 });
