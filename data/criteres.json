@@ -4,11 +4,11 @@
     "label": "Implication et attitude en classe",
     "icon": "fa-user-check",
     "suggestions": [
-      "Analyse les consignes et reformule pour s’assurer de bien comprendre.",
-      "Planifie ses actions et avance méthodiquement dans les tâches proposées.",
-      "Partage ses idées et contribue activement aux échanges du groupe.",
-      "Demande des retours pour progresser et ajuste ses méthodes de travail.",
-      "Fait preuve d’autonomie tout en sollicitant l’aide appropriée si nécessaire."
+      "Participe activement aux échanges et montre une vraie motivation.",
+      "S’investit pleinement dans chaque activité proposée.",
+      "Prend des initiatives pour faire avancer le travail collectif.",
+      "Reste concentré et attentif tout au long des séances.",
+      "Encourage ses camarades et crée une dynamique positive."
     ],
     "improvements": [
       "Essayez de vous impliquer davantage en posant une question par séance.",
@@ -18,48 +18,15 @@
     ]
   },
   {
-    "code": "technique",
-    "label": "Compétences techniques / professionnelles",
-    "icon": "fa-wrench",
-    "suggestions": [
-      "Rencontre des difficultés à utiliser les outils de base.",
-      "Manque de précision dans l’exécution des tâches techniques.",
-      "A besoin d’un accompagnement fréquent pour réaliser les opérations.",
-      "Éprouve des hésitations dans l’application des procédures.",
-      "Respecte partiellement les normes de sécurité élémentaires.",
-      "Sait reproduire les gestes appris sans autonomie complète.",
-      "Montre une compréhension basique des outils professionnels.",
-      "Accomplit les tâches techniques avec guidance régulière.",
-      "Commence à respecter les règles de sécurité de manière sporadique.",
-      "Maîtrise les opérations élémentaires en situation guidée.",
-      "Prend en compte les consignes de sécurité avec régularité.",
-      "Montre une rigueur correcte dans le maniement des équipements.",
-      "Accomplit les travaux techniques de façon fiable et répétée.",
-      "Démontre une bonne compréhension des protocoles professionnels.",
-      "Exécute les tâches techniques avec précision et méthode.",
-      "Utilise efficacement les outils en respectant les normes.",
-      "Fait preuve d’autonomie et de soin dans le travail technique.",
-      "Anticipe les difficultés et ajuste sa méthode de travail.",
-      "Maîtrise les gestes professionnels complexes de façon constante.",
-      "Donne l’exemple en matière de qualité et de sécurité."
-    ],
-    "improvements": [
-      "Pratiquez les gestes de base régulièrement pour gagner en confiance.",
-      "Consolidez vos acquis en vous exerçant sur des cas simples.",
-      "Défiez-vous sur des tâches plus complexes pour gagner en autonomie.",
-      "Continuez d’affiner vos compétences et partagez votre savoir-faire."
-    ]
-  },
-  {
     "code": "comprehension",
     "label": "Compréhension et acquisition des savoirs",
     "icon": "fa-brain",
     "suggestions": [
-      "Analyse les consignes et reformule pour s’assurer de bien comprendre.",
-      "Planifie ses actions et avance méthodiquement dans les tâches proposées.",
-      "Partage ses idées et contribue activement aux échanges du groupe.",
-      "Demande des retours pour progresser et ajuste ses méthodes de travail.",
-      "Fait preuve d’autonomie tout en sollicitant l’aide appropriée si nécessaire."
+      "Assimile rapidement les nouvelles notions abordées.",
+      "Fait des liens pertinents entre les cours et les exercices.",
+      "Explique clairement ses démarches pour vérifier sa compréhension.",
+      "Réinvestit les connaissances vues en classe dans ses travaux.",
+      "Anticipe les difficultés et cherche à approfondir ses savoirs."
     ],
     "improvements": [
       "Relisez vos notes après chaque cours pour renforcer votre compréhension.",
@@ -73,11 +40,11 @@
     "label": "Travail personnel et régularité",
     "icon": "fa-clock",
     "suggestions": [
-      "Analyse les consignes et reformule pour s’assurer de bien comprendre.",
-      "Planifie ses actions et avance méthodiquement dans les tâches proposées.",
-      "Partage ses idées et contribue activement aux échanges du groupe.",
-      "Demande des retours pour progresser et ajuste ses méthodes de travail.",
-      "Fait preuve d’autonomie tout en sollicitant l’aide appropriée si nécessaire."
+      "Fournit un travail régulier et soigné.",
+      "Respecte les échéances fixées avec sérieux.",
+      "S’organise efficacement pour mener à bien ses missions.",
+      "Persévère malgré les obstacles rencontrés.",
+      "Sait prioriser les tâches pour gagner en efficacité."
     ],
     "improvements": [
       "Organisez une liste de tâches à accomplir chaque jour.",
@@ -91,49 +58,17 @@
     "label": "Savoir-être professionnel",
     "icon": "fa-user-tie",
     "suggestions": [
-      "Analyse les consignes et reformule pour s’assurer de bien comprendre.",
-      "Planifie ses actions et avance méthodiquement dans les tâches proposées.",
-      "Partage ses idées et contribue activement aux échanges du groupe.",
-      "Demande des retours pour progresser et ajuste ses méthodes de travail.",
-      "Fait preuve d’autonomie tout en sollicitant l’aide appropriée si nécessaire."
+      "Adopte une attitude respectueuse avec tous les membres du groupe.",
+      "Fait preuve d’écoute et de bienveillance au quotidien.",
+      "S’adapte facilement aux différentes situations rencontrées.",
+      "Garde son calme et gère positivement les imprévus.",
+      "Renforce la cohésion du groupe par son comportement exemplaire."
     ],
     "improvements": [
       "Rappelez-vous de respecter ponctualité et consignes à chaque séance.",
       "Travaillez votre communication avec vos pairs pour un meilleur échange.",
       "Proposez régulièrement votre aide pour renforcer votre esprit d’équipe.",
       "Continuez d’incarner un savoir-être exemplaire pour vos camarades."
-    ]
-  },
-  {
-    "code": "progression",
-    "label": "Progression",
-    "icon": "fa-chart-line",
-    "suggestions": [
-      "N’a pas montré d’évolution notable depuis le début du semestre.",
-      "Progrès limités, à consolider régulièrement les fondamentaux.",
-      "Progression irrégulière et sujette à encadrement permanent.",
-      "Avance lentement avec recul sur certaines notions.",
-      "Progrès perceptibles mais sans suivi clair.",
-      "Évolution modérée, à renforcer par un travail ciblé.",
-      "Montre une amélioration progressive sur quelques points.",
-      "Progrès constants dans les tâches guidées.",
-      "Avance régulièrement sur les exercices pratiques.",
-      "S’adapte progressivement en autonomie.",
-      "Amélioration sensible dans la compréhension des méthodes.",
-      "Acquiert de nouvelles compétences à un rythme satisfaisant.",
-      "Progression régulière avec initiatives ponctuelles.",
-      "Évolution notable sur plusieurs critères.",
-      "S’inscrit dans une dynamique positive de progression.",
-      "Démontre une constance dans le développement de ses acquis.",
-      "Excelle dans sa progression et ses résultats sont en nette amélioration.",
-      "Affine sans cesse ses compétences et perfectionne son savoir.",
-      "Donne l’exemple par sa progression continue et motivée."
-    ],
-    "improvements": [
-      "Identifiez un point clé à améliorer chaque semaine.",
-      "Fixez-vous de petits objectifs pour mesurer votre progression.",
-      "Célébrez vos progrès et définissez un nouveau défi.",
-      "Continuez à vous challenger pour maintenir votre évolution."
     ]
   }
 ]
