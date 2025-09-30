@@ -4,11 +4,11 @@
     "label": "Implication et attitude en classe",
     "icon": "fa-user-check",
     "suggestions": [
-      "Participe activement aux échanges et montre une vraie motivation.",
-      "S’investit pleinement dans chaque activité proposée.",
-      "Prend des initiatives pour faire avancer le travail collectif.",
-      "Reste concentré et attentif tout au long des séances.",
-      "Encourage ses camarades et crée une dynamique positive."
+      "Montre peu d’implication et attend souvent les consignes.",
+      "S’implique ponctuellement mais pourrait participer davantage.",
+      "Participe de manière régulière et reste concentré.",
+      "S’implique activement et aide ses camarades.",
+      "Attitude exemplaire, entraîne positivement le groupe."
     ],
     "improvements": [
       "Essayez de vous impliquer davantage en posant une question par séance.",
@@ -22,11 +22,11 @@
     "label": "Compréhension et acquisition des savoirs",
     "icon": "fa-brain",
     "suggestions": [
-      "Assimile rapidement les nouvelles notions abordées.",
-      "Fait des liens pertinents entre les cours et les exercices.",
-      "Explique clairement ses démarches pour vérifier sa compréhension.",
-      "Réinvestit les connaissances vues en classe dans ses travaux.",
-      "Anticipe les difficultés et cherche à approfondir ses savoirs."
+      "Compréhension fragile des notions abordées.",
+      "Assimile les notions essentielles avec quelques hésitations.",
+      "Compréhension solide des notions étudiées.",
+      "Mobilise aisément ses connaissances dans les activités.",
+      "Maîtrise approfondie et apporte des éclairages pertinents."
     ],
     "improvements": [
       "Relisez vos notes après chaque cours pour renforcer votre compréhension.",
@@ -40,11 +40,11 @@
     "label": "Travail personnel et régularité",
     "icon": "fa-clock",
     "suggestions": [
-      "Fournit un travail régulier et soigné.",
-      "Respecte les échéances fixées avec sérieux.",
-      "S’organise efficacement pour mener à bien ses missions.",
-      "Persévère malgré les obstacles rencontrés.",
-      "Sait prioriser les tâches pour gagner en efficacité."
+      "Travail irrégulier et consignes peu respectées.",
+      "Travail satisfaisant mais pourrait gagner en constance.",
+      "Travail sérieux et régulier.",
+      "Travail rigoureux et toujours rendu dans les délais.",
+      "Organisation exemplaire et grand sens des priorités."
     ],
     "improvements": [
       "Organisez une liste de tâches à accomplir chaque jour.",
@@ -58,11 +58,11 @@
     "label": "Savoir-être professionnel",
     "icon": "fa-user-tie",
     "suggestions": [
-      "Adopte une attitude respectueuse avec tous les membres du groupe.",
-      "Fait preuve d’écoute et de bienveillance au quotidien.",
-      "S’adapte facilement aux différentes situations rencontrées.",
-      "Garde son calme et gère positivement les imprévus.",
-      "Renforce la cohésion du groupe par son comportement exemplaire."
+      "Comportement à améliorer, respecte difficilement le cadre.",
+      "Attitude correcte mais parfois inconstante.",
+      "Attitude positive et respectueuse.",
+      "Savoir-être professionnel affirmé et rassurant.",
+      "Attitude exemplaire et fédératrice."
     ],
     "improvements": [
       "Rappelez-vous de respecter ponctualité et consignes à chaque séance.",
